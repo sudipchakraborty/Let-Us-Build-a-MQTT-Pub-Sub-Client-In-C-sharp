@@ -17,6 +17,7 @@ namespace Pub_Sub_Client
         Mqtt client;
         MSG disp_pub;
         MSG disp_sub;
+        DateTime time_st;
         
         public Form1()
         {
@@ -42,6 +43,8 @@ namespace Pub_Sub_Client
             if(client.Connect(txt_client_ID.Text,txt_server_address.Text,txt_topic_sub.Text))
             {
                 pb_status.BackColor=Color.Green;
+                time_st = DateTime.Now;
+
             }else
             {
                 pb_status.BackColor=Color.Red;
@@ -68,6 +71,7 @@ namespace Pub_Sub_Client
             {
                 disp_sub.push(client.receive_msg_new);
             }
+            txt_sub_topic_count.Text=lst_topic_sub.Items.Count.ToString();  
         }
 
         private void btn_pub_timer_st_Click(object sender, EventArgs e)
@@ -97,6 +101,8 @@ namespace Pub_Sub_Client
                 }
                 
             }
+
+            txt_pub_topic_count.Text=lst_topic_pub.Items.Count.ToString();  
             
         }
 
@@ -108,6 +114,25 @@ namespace Pub_Sub_Client
         private void btn_clear_disp_pub_Click(object sender, EventArgs e)
         {
             lst_topic_pub.Items.Clear();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string hh = DateTime.Now.Hour.ToString();
+            hh=hh.PadLeft(2, '0');
+
+            string mm = DateTime.Now.Minute.ToString();
+            mm=mm.PadLeft(2, '0');
+
+            string ss = DateTime.Now.Second.ToString();
+            ss=ss.PadLeft(2, '0');
+
+            txt_display_time.Text = hh+":"+mm+":"+ss;
+
+            TimeSpan span = (DateTime.Now-time_st);
+            txt_running_time.Text = span.ToString();
+
+             
         }
     }
 }

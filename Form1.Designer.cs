@@ -64,6 +64,14 @@
             this.timer_pub = new System.Windows.Forms.Timer(this.components);
             this.txt_msg = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txt_sub_topic_count = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_pub_topic_count = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_running_time = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_display_time = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -84,6 +92,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txt_sub_topic_count);
             this.groupBox2.Controls.Add(this.btn_clear_disp_sub);
             this.groupBox2.Controls.Add(this.lst_topic_sub);
             this.groupBox2.Controls.Add(this.label6);
@@ -134,7 +144,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.btn_clear_disp_pub);
+            this.groupBox3.Controls.Add(this.txt_pub_topic_count);
             this.groupBox3.Controls.Add(this.btn_pub_timer_stp);
             this.groupBox3.Controls.Add(this.btn_pub_timer_st);
             this.groupBox3.Controls.Add(this.chk_pub_time);
@@ -276,7 +288,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gabriola", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Yellow;
-            this.label1.Location = new System.Drawing.Point(381, -3);
+            this.label1.Location = new System.Drawing.Point(90, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 50);
             this.label1.TabIndex = 3;
@@ -428,12 +440,86 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Message";
             // 
+            // txt_sub_topic_count
+            // 
+            this.txt_sub_topic_count.Location = new System.Drawing.Point(340, 15);
+            this.txt_sub_topic_count.Name = "txt_sub_topic_count";
+            this.txt_sub_topic_count.Size = new System.Drawing.Size(100, 20);
+            this.txt_sub_topic_count.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(283, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "COUNT=";
+            // 
+            // txt_pub_topic_count
+            // 
+            this.txt_pub_topic_count.Location = new System.Drawing.Point(373, 15);
+            this.txt_pub_topic_count.Name = "txt_pub_topic_count";
+            this.txt_pub_topic_count.Size = new System.Drawing.Size(67, 20);
+            this.txt_pub_topic_count.TabIndex = 7;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(316, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 13);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "COUNT=";
+            // 
+            // txt_running_time
+            // 
+            this.txt_running_time.BackColor = System.Drawing.Color.Maroon;
+            this.txt_running_time.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_running_time.Font = new System.Drawing.Font("Patopian 1986", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_running_time.ForeColor = System.Drawing.Color.Red;
+            this.txt_running_time.Location = new System.Drawing.Point(720, 11);
+            this.txt_running_time.Name = "txt_running_time";
+            this.txt_running_time.Size = new System.Drawing.Size(195, 34);
+            this.txt_running_time.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Yellow;
+            this.label12.Location = new System.Drawing.Point(603, 25);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(111, 16);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "System Running=";
+            // 
+            // txt_display_time
+            // 
+            this.txt_display_time.BackColor = System.Drawing.Color.Maroon;
+            this.txt_display_time.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_display_time.Font = new System.Drawing.Font("Patopian 1986", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_display_time.ForeColor = System.Drawing.Color.Red;
+            this.txt_display_time.Location = new System.Drawing.Point(361, 12);
+            this.txt_display_time.Name = "txt_display_time";
+            this.txt_display_time.Size = new System.Drawing.Size(132, 34);
+            this.txt_display_time.TabIndex = 7;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(929, 527);
+            this.Controls.Add(this.txt_display_time);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txt_running_time);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
@@ -492,6 +578,14 @@
         private System.Windows.Forms.CheckBox chk_pub_time;
         private System.Windows.Forms.Button btn_clear_disp_sub;
         private System.Windows.Forms.Button btn_clear_disp_pub;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_sub_topic_count;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt_pub_topic_count;
+        private System.Windows.Forms.TextBox txt_running_time;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txt_display_time;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
