@@ -29,7 +29,7 @@ namespace Pub_Sub_Client
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            cbo_server_address.SelectedIndex = 0;
         }
 
         private void btn_publish_Click(object sender, EventArgs e)
@@ -40,7 +40,8 @@ namespace Pub_Sub_Client
 
         private void btn_connect_Click(object sender, EventArgs e)
         {
-            if(client.Connect(txt_client_ID.Text,txt_server_address.Text,txt_topic_sub.Text))
+            string addr= cbo_server_address.Text;
+            if(client.Connect(txt_client_ID.Text,addr,txt_topic_sub.Text))
             {
                 pb_status.BackColor=Color.Green;
                 time_st = DateTime.Now;
