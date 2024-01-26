@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.btn_publish = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_sub_topic_count = new System.Windows.Forms.TextBox();
             this.btn_clear_disp_sub = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_topic_sub = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_clear_disp_pub = new System.Windows.Forms.Button();
             this.txt_pub_topic_count = new System.Windows.Forms.TextBox();
@@ -54,6 +56,7 @@
             this.txt_topic_pub = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbo_server_address = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pb_status = new System.Windows.Forms.PictureBox();
             this.btn_disconnect = new System.Windows.Forms.Button();
@@ -71,10 +74,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txt_display_time = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.cbo_server_address = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_show_graph = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -96,6 +97,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_show_graph);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txt_sub_topic_count);
@@ -110,6 +112,16 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "SUBSCRIBER";
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Maroon;
+            this.button2.Location = new System.Drawing.Point(286, 337);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 42);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Export";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -132,7 +144,7 @@
             this.btn_clear_disp_sub.ForeColor = System.Drawing.Color.Black;
             this.btn_clear_disp_sub.Location = new System.Drawing.Point(11, 337);
             this.btn_clear_disp_sub.Name = "btn_clear_disp_sub";
-            this.btn_clear_disp_sub.Size = new System.Drawing.Size(165, 36);
+            this.btn_clear_disp_sub.Size = new System.Drawing.Size(94, 36);
             this.btn_clear_disp_sub.TabIndex = 6;
             this.btn_clear_disp_sub.Text = "Clear";
             this.btn_clear_disp_sub.UseVisualStyleBackColor = true;
@@ -161,7 +173,7 @@
             this.txt_topic_sub.Name = "txt_topic_sub";
             this.txt_topic_sub.Size = new System.Drawing.Size(377, 20);
             this.txt_topic_sub.TabIndex = 2;
-            this.txt_topic_sub.Text = "outTopic";
+            this.txt_topic_sub.Text = "Home/door/Reception";
             // 
             // groupBox3
             // 
@@ -188,6 +200,16 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PUBLISHER";
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Maroon;
+            this.button1.Location = new System.Drawing.Point(363, 333);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 46);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Export";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -319,7 +341,7 @@
             this.txt_topic_pub.Name = "txt_topic_pub";
             this.txt_topic_pub.Size = new System.Drawing.Size(232, 20);
             this.txt_topic_pub.TabIndex = 2;
-            this.txt_topic_pub.Text = "AIPL/DOOR/Reception";
+            this.txt_topic_pub.Text = "Home/door/Reception";
             // 
             // label1
             // 
@@ -350,7 +372,22 @@
             this.groupBox1.Size = new System.Drawing.Size(898, 79);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "SUBSCRIBER";
+            this.groupBox1.Text = "Server Parameter";
+            // 
+            // cbo_server_address
+            // 
+            this.cbo_server_address.FormattingEnabled = true;
+            this.cbo_server_address.Items.AddRange(new object[] {
+            "localhost",
+            "broker.hivemq.com",
+            "mqtt.flespi.io",
+            "mqtt.dioty.co",
+            "mqtt.dioty.co",
+            "mqtt.fluux.io"});
+            this.cbo_server_address.Location = new System.Drawing.Point(15, 46);
+            this.cbo_server_address.Name = "cbo_server_address";
+            this.cbo_server_address.Size = new System.Drawing.Size(174, 21);
+            this.cbo_server_address.TabIndex = 5;
             // 
             // label4
             // 
@@ -395,30 +432,30 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(307, 23);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(311, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 20);
+            this.label7.Size = new System.Drawing.Size(56, 16);
             this.label7.TabIndex = 1;
             this.label7.Text = "Client ID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(191, 23);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(192, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 20);
+            this.label3.Size = new System.Drawing.Size(74, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Server Port";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 23);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 20);
+            this.label2.Size = new System.Drawing.Size(101, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Server Address";
             // 
@@ -473,11 +510,11 @@
             // 
             this.txt_running_time.BackColor = System.Drawing.Color.Maroon;
             this.txt_running_time.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_running_time.Font = new System.Drawing.Font("Patopian 1986", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_running_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_running_time.ForeColor = System.Drawing.Color.Red;
             this.txt_running_time.Location = new System.Drawing.Point(550, 12);
             this.txt_running_time.Name = "txt_running_time";
-            this.txt_running_time.Size = new System.Drawing.Size(195, 34);
+            this.txt_running_time.Size = new System.Drawing.Size(195, 37);
             this.txt_running_time.TabIndex = 6;
             // 
             // label12
@@ -495,11 +532,11 @@
             // 
             this.txt_display_time.BackColor = System.Drawing.Color.Maroon;
             this.txt_display_time.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_display_time.Font = new System.Drawing.Font("Patopian 1986", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_display_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_display_time.ForeColor = System.Drawing.Color.Red;
             this.txt_display_time.Location = new System.Drawing.Point(273, 12);
             this.txt_display_time.Name = "txt_display_time";
-            this.txt_display_time.Size = new System.Drawing.Size(132, 34);
+            this.txt_display_time.Size = new System.Drawing.Size(132, 37);
             this.txt_display_time.TabIndex = 7;
             // 
             // timer1
@@ -507,20 +544,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // cbo_server_address
-            // 
-            this.cbo_server_address.FormattingEnabled = true;
-            this.cbo_server_address.Items.AddRange(new object[] {
-            "broker.hivemq.com",
-            "mqtt.flespi.io",
-            "mqtt.dioty.co",
-            "mqtt.dioty.co",
-            "mqtt.fluux.io"});
-            this.cbo_server_address.Location = new System.Drawing.Point(15, 46);
-            this.cbo_server_address.Name = "cbo_server_address";
-            this.cbo_server_address.Size = new System.Drawing.Size(174, 21);
-            this.cbo_server_address.TabIndex = 5;
             // 
             // pictureBox1
             // 
@@ -532,25 +555,15 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btn_show_graph
             // 
-            this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(363, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 46);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Export";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.ForeColor = System.Drawing.Color.Maroon;
-            this.button2.Location = new System.Drawing.Point(286, 337);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 42);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Export";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_show_graph.ForeColor = System.Drawing.Color.Black;
+            this.btn_show_graph.Location = new System.Drawing.Point(120, 338);
+            this.btn_show_graph.Name = "btn_show_graph";
+            this.btn_show_graph.Size = new System.Drawing.Size(156, 35);
+            this.btn_show_graph.TabIndex = 11;
+            this.btn_show_graph.Text = "Show Graph";
+            this.btn_show_graph.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -632,6 +645,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_show_graph;
     }
 }
 
