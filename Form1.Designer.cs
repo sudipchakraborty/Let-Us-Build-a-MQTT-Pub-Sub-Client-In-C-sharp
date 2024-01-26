@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.btn_publish = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_show_graph = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_sub_topic_count = new System.Windows.Forms.TextBox();
@@ -75,7 +76,7 @@
             this.txt_display_time = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_show_graph = new System.Windows.Forms.Button();
+            this.btn_get_srv_resp_time = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -112,6 +113,16 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "SUBSCRIBER";
+            // 
+            // btn_show_graph
+            // 
+            this.btn_show_graph.ForeColor = System.Drawing.Color.Black;
+            this.btn_show_graph.Location = new System.Drawing.Point(120, 338);
+            this.btn_show_graph.Name = "btn_show_graph";
+            this.btn_show_graph.Size = new System.Drawing.Size(156, 35);
+            this.btn_show_graph.TabIndex = 11;
+            this.btn_show_graph.Text = "Show Graph";
+            this.btn_show_graph.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -356,6 +367,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_get_srv_resp_time);
             this.groupBox1.Controls.Add(this.cbo_server_address);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.pb_status);
@@ -392,7 +404,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(799, 16);
+            this.label4.Location = new System.Drawing.Point(837, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 4;
@@ -401,7 +413,7 @@
             // pb_status
             // 
             this.pb_status.BackColor = System.Drawing.Color.Red;
-            this.pb_status.Location = new System.Drawing.Point(809, 32);
+            this.pb_status.Location = new System.Drawing.Point(845, 36);
             this.pb_status.Name = "pb_status";
             this.pb_status.Size = new System.Drawing.Size(31, 28);
             this.pb_status.TabIndex = 3;
@@ -410,9 +422,9 @@
             // btn_disconnect
             // 
             this.btn_disconnect.ForeColor = System.Drawing.Color.Navy;
-            this.btn_disconnect.Location = new System.Drawing.Point(612, 23);
+            this.btn_disconnect.Location = new System.Drawing.Point(563, 29);
             this.btn_disconnect.Name = "btn_disconnect";
-            this.btn_disconnect.Size = new System.Drawing.Size(126, 49);
+            this.btn_disconnect.Size = new System.Drawing.Size(72, 37);
             this.btn_disconnect.TabIndex = 2;
             this.btn_disconnect.Text = "Disconnect";
             this.btn_disconnect.UseVisualStyleBackColor = true;
@@ -421,9 +433,9 @@
             // btn_connect
             // 
             this.btn_connect.ForeColor = System.Drawing.Color.Navy;
-            this.btn_connect.Location = new System.Drawing.Point(513, 23);
+            this.btn_connect.Location = new System.Drawing.Point(492, 29);
             this.btn_connect.Name = "btn_connect";
-            this.btn_connect.Size = new System.Drawing.Size(93, 49);
+            this.btn_connect.Size = new System.Drawing.Size(65, 37);
             this.btn_connect.TabIndex = 2;
             this.btn_connect.Text = "Connect";
             this.btn_connect.UseVisualStyleBackColor = true;
@@ -555,15 +567,15 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_show_graph
+            // btn_get_srv_resp_time
             // 
-            this.btn_show_graph.ForeColor = System.Drawing.Color.Black;
-            this.btn_show_graph.Location = new System.Drawing.Point(120, 338);
-            this.btn_show_graph.Name = "btn_show_graph";
-            this.btn_show_graph.Size = new System.Drawing.Size(156, 35);
-            this.btn_show_graph.TabIndex = 11;
-            this.btn_show_graph.Text = "Show Graph";
-            this.btn_show_graph.UseVisualStyleBackColor = true;
+            this.btn_get_srv_resp_time.ForeColor = System.Drawing.Color.Black;
+            this.btn_get_srv_resp_time.Location = new System.Drawing.Point(641, 29);
+            this.btn_get_srv_resp_time.Name = "btn_get_srv_resp_time";
+            this.btn_get_srv_resp_time.Size = new System.Drawing.Size(152, 35);
+            this.btn_get_srv_resp_time.TabIndex = 6;
+            this.btn_get_srv_resp_time.Text = "Get Response Time";
+            this.btn_get_srv_resp_time.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -646,6 +658,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_show_graph;
+        private System.Windows.Forms.Button btn_get_srv_resp_time;
     }
 }
 
